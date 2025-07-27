@@ -1,0 +1,501 @@
+/* Reset and base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1B262C;
+  color: #BBE1FA;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Container structure */
+.admin-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background: linear-gradient(to bottom, #1B262C, #0F4C75);
+  width: 240px;
+  padding: 30px 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+}
+
+.sidebar h3 {
+  color: #BBE1FA;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.sidebar li:hover {
+  transform: translateX(8px);
+  color: #3282B8;
+  font-weight: bold;
+}
+
+/* Main admin area */
+.admin-main {
+  margin-left: 240px;
+  padding: 30px;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #1B262C;
+  transition: all 0.3s ease;
+}
+
+.admin-main h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #BBE1FA;
+}
+
+/* Cards section */
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #0F4C75;
+  padding: 20px 30px;
+  border-radius: 12px;
+  flex: 1;
+  color: #BBE1FA;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #3282B8;
+}
+
+/* Table styles */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #0F4C75;
+  color: #BBE1FA;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.admin-table th, .admin-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #3282B8;
+  font-weight: bold;
+}
+
+.admin-table tr:nth-child(even) {
+  background-color: #1B262C;
+}
+
+.admin-table tr:hover {
+  background-color: #3282B8;
+  transition: background 0.3s;
+}
+
+/* Charts placeholder */
+.charts {
+  margin-top: 30px;
+  background-color: #0F4C75;
+  padding: 20px;
+  border-radius: 12px;
+  color: #BBE1FA;
+  text-align: center;
+}
+
+/* Dark mode toggle */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Animation for page entrance */
+.admin-main {
+  animation: slideFade 0.6s ease;
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .admin-main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #1B262C;
+  color: #BBE1FA;
+}
+
+.admin-dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #0F4C75;
+  padding: 20px;
+  color: white;
+}
+
+.sidebar h2.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  background: #3282B8;
+  border-radius: 6px;
+}
+
+.main-panel {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #1B262C;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.charts-row, .bottom-row {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* src/pages/admin/AdminStyles.css */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #1B262C;
+  color: #BBE1FA;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+  background-color: #0F4C75;
+  transition: all 0.3s ease-in-out;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  flex: 1;
+  background-color: #3282B8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.recent-uploads {
+  background: #1B262C;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.recent-uploads ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recent-uploads li {
+  padding: 10px 0;
+  border-bottom: 1px solid #3282B8;
+}
+
+.charts {
+  margin-top: 30px;
+}
+
+/* State Cards*/
+/* src/components/StatCards.css */
+.stat-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  flex: 1;
+  background: #3F72AF;
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.stat-card span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* admin styles*/
+/* src/pages/admin/AdminStyles.css */
+
+.admin-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fb;
+}
+
+.admin-main {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3f72af;
+  margin-bottom: 20px;
+}
+
+.dashboard-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.chart-box {
+  flex: 2;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.recent-uploads-box {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.section-title {
+  margin-bottom: 12px;
+  color: #112D4E;
+  font-weight: 600;
+}
+
+.upload-list {
+  list-style: none;
+  padding: 0;
+}
+
+.upload-item {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-left: 4px solid #3f72af;
+  background: #f0f4ff;
+  border-radius: 6px;
+}
+
+.no-data {
+  font-style: italic;
+  color: #aaa;
+}
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #112D4E;
+}
+
+.dashboard-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-left,
+.dashboard-right {
+  flex: 1;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+.improved-dashboard .dashboard-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2,
+.dashboard-header h3 {
+  color: #3F72AF;
+  font-weight: 700;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.recent-uploads-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.recent-uploads-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recent-uploads-card h4 {
+  color: #112D4E;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.recent-uploads-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-uploads-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
